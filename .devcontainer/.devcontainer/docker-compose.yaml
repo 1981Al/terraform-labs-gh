@@ -1,0 +1,9 @@
+# version: '3.8'
+services:
+  my-development-service:
+    image: ubuntu:24.04
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    command: sleep infinity
+    volumes:
+      - ../:/workspaces
