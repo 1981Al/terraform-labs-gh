@@ -1,9 +1,13 @@
-# version: '3.8'
+version: '3.8'
+
 services:
-  my-development-service:
+  lab:
     image: ubuntu:24.04
+    #container_name: terraform
     environment:
       - DEBIAN_FRONTEND=noninteractive
     command: sleep infinity
     volumes:
       - ../:/workspaces
+
+ 

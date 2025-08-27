@@ -1,0 +1,22 @@
+{
+  "name": "Dev Container lab",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "lab",
+  "workspaceFolder": "/workspaces",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {} // Enable Docker in Docker for building images
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached" // Mount SSH keys for Git access
+  ],
+
+  "postCreateCommand": "bash /workspaces/.devcontainer/script/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-kubernetes-tools.aks-devx-tools",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
